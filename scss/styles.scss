@@ -1,0 +1,150 @@
+@import'normalize.scss';
+@import'mixins.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap');
+
+$text-color: #fff;
+$accent-color: #eecd31;
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	height: 100%;
+}
+
+body {
+	font-family: 'Poppins', sans-serif; 
+	font-size: 1.8rem;
+	line-height: 1.6;
+	color: #333;
+	min-height: 100%;
+	// padding: 0 30px;
+	// background-color: #333;
+}
+
+main {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.conteiner {
+		max-width: 950px;
+		margin: 0 auto;
+		margin-bottom: 50px;
+		text-align: center;
+	&__title {
+		margin: 10px 0 ;
+		max-height: 2.6rem;
+		font-size: 1.8rem;
+		overflow: hidden;
+		font-weight: bold;
+	}
+	&__text {
+		max-height: 28rem;
+		line-height: 9.5rem;
+		overflow: hidden;
+		font-size: 8.6rem;
+		
+	}
+}
+.slider {
+	margin-left: 15%;
+}
+
+.slick-slide {
+	width: 90%;
+	padding: 0 15px;
+}
+.item {
+	// padding: 0 -15px;
+	max-width: 400px;
+	max-height: 360px;
+	overflow: hidden;
+	position: relative;
+	&__images {
+		height: 100%;
+	}
+	&__img {
+		min-width: 100%;
+		min-height: 100%;
+		// outline: 1px solid red;
+		overflow: hidden;
+	}
+	&__overlay {
+		@include my_pos();
+		width: 100%;
+		height: 100%;
+		background-color: #32eaad;
+		padding: 30px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-end;
+		opacity: 0;
+		color: #fff;
+		@include tr(all);
+		&:hover,
+		&:focus {
+			opacity: .9;
+		}
+	}
+
+	&__title {
+		font-size: 2.8rem;
+		max-height: 5.8rem;
+		letter-spacing: 6px;
+		line-height: 28px;
+		overflow: hidden;
+	}
+	&__text {
+		font-size: 12px;
+		letter-spacing: 2px;
+		line-height: 24px;
+		color: #ffffff;
+		font-weight: 600;
+		max-height: 2.2rem;
+		overflow: hidden;
+	}
+}
+
+.slick-prev {
+	width: 96px;
+	height: 96px;
+	left: -130px;
+	background: url(../img/Layer10.png) no-repeat;
+	
+}
+.slick-next {
+	// content: '';
+	right: 70px;
+	background: url(../img/Layer10.svg) no-repeat;
+	width: 96px;
+	height: 96px;
+}
+.slick-prev:before, .slick-next:before {
+	content: '';
+	// opacity: 1;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+	
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(130, 44, 124,0.5);
+    border-radius: 50%;
+    background-color: #f2d5f0;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
+{
+	@include tr(all);
+
+}
+
